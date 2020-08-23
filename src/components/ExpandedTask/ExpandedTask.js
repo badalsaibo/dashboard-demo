@@ -14,6 +14,8 @@ const ExpandedTask = (props) => {
         <h4 className="expanded-task__sub-heading">due date</h4>
         <span className="expanded-task__sub-info">{dueDate}</span>
       </div>
+      <button className="secondary-button">view in asana</button>
+      <button className="primary-button">mark as complete</button>
     </div>
   );
 };
