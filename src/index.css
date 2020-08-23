@@ -11,14 +11,14 @@ html {
 }
 
 body {
-  width: 1440px;
-  font-family: "Work Sans", -apple-system, "Roboto", "Helvetica Neue",
+  max-width: 1440px;
+  font-family: 'Work Sans', -apple-system, 'Roboto', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
