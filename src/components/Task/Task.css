@@ -1,0 +1,37 @@
+.task {
+}
+
+.task__checkbox {
+}
+
+.task__checkbox-ticked {
+}
+
+.task__checkbox-empty {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 4px solid #5d5c5c;
+  cursor: pointer;
+}
+
+.task__title {
+}
+
+.task__assignee {
+}
+
+.task__due-date {
+}
+
+.completed .task__title,
+.completed .task__due-date {
+  color: #8d8d8d;
+  text-decoration-line: line-through;
+}
+
+.completed .task__checkbox,
+.completed .task__assignee,
+.completed .task__view-more {
+  fill: #c4c4c4;
+}
