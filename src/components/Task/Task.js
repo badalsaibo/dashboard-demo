@@ -10,7 +10,6 @@ import './Task.css';
 const Task = ({ data: { completed, title, assignee, dueDate } }) => {
   return (
     <div className={completed ? 'task completed' : 'task'}>
-      Hello from task!
       <div className="task__checkbox">
         {completed ? (
           <div className="task__checkbox-ticked">
@@ -20,7 +19,7 @@ const Task = ({ data: { completed, title, assignee, dueDate } }) => {
           <div className="task__checkbox-empty"></div>
         )}
       </div>
-      <div className="task__title">{title}</div>
+      <h3 className="task__title">{title}</h3>
       <div className="task__assignee">
         <UserIcon width="36" />
       </div>

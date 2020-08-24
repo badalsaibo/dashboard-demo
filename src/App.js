@@ -1,8 +1,9 @@
 import React from 'react';
 
 import Task from './components/Task/Task';
-import ExpandedTask from './components/ExpandedTask/ExpandedTask';
-import AddTask from './components/AddTask/AddTask';
+// import ExpandedTask from './components/ExpandedTask/ExpandedTask';
+// import AddTask from './components/AddTask/AddTask';
+import TaskContainer from './components/TaskContainer/TaskContainer';
 
 import './App.css';
 
@@ -39,9 +40,11 @@ const data = [
 function App() {
   return (
     <div className="container">
-      <Task data={data[0]} />
-      <ExpandedTask data={data[1]} />
-      <AddTask />
+      <TaskContainer>
+        {data.map((e) => (
+          <Task data={e} key={e.assignee} />
+        ))}
+      </TaskContainer>
     </div>
   );
 }

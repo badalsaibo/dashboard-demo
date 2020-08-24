@@ -1,7 +1,19 @@
 .task {
+  display: contents;
+  position: relative;
+}
+
+.task::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: red;
 }
 
 .task__checkbox {
+  grid-column: 1;
 }
 
 .task__checkbox-ticked {
@@ -16,12 +28,27 @@
 }
 
 .task__title {
+  grid-column: 2;
+  justify-self: left;
+}
+
+.task__title,
+.task__due-date {
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 25px;
 }
 
 .task__assignee {
+  grid-column: 3;
 }
 
 .task__due-date {
+  grid-column: 4;
+}
+
+.task__view-more {
+  grid-column: 5;
 }
 
 .completed .task__title,
