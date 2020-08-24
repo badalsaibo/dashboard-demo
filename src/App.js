@@ -1,8 +1,8 @@
-import React, { useState, createContext } from 'react';
+import React, { useState } from 'react';
 
 import Task from './components/Task/Task';
 // import ExpandedTask from './components/ExpandedTask/ExpandedTask';
-// import AddTask from './components/AddTask/AddTask';
+import Header from './components/Header/Header';
 import TaskContainer from './components/TaskContainer/TaskContainer';
 
 import './App.css';
@@ -58,6 +58,7 @@ function App() {
 
   return (
     <div className="container">
+      <Header />
       <TaskContainer>
         {tasks.map((e) => (
           <Task data={e} key={e.id} toggleCompleted={toggleCompleted} />

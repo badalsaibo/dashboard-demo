@@ -2,16 +2,9 @@
   display: contents;
 }
 
-/*
-
-.task::after {
-  position: absolute;
-  content: '';
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: red;
-} */
+.task:first-child {
+  margin-top: 16px;
+}
 
 .task__checkbox {
   grid-column: 1;

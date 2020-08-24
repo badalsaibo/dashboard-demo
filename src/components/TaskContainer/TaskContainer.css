@@ -4,6 +4,7 @@
   justify-items: center;
   align-items: center;
   row-gap: 32px;
+  margin-top: 52px;
 }
 
 .task-container__header-title {
