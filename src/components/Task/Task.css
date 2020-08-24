@@ -51,6 +51,7 @@
 
 .task__view-more {
   grid-column: 5;
+  cursor: pointer;
 }
 
 .completed .task__title,
@@ -63,4 +64,11 @@
 .completed .task__assignee,
 .completed .task__view-more {
   fill: #c4c4c4;
+}
+
+/* -- Expanded View -- **/
+.task__expanded-view {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
