@@ -21,7 +21,7 @@ const Header = ({ handleToggleAddTask }) => {
           onClick={handleToggleAddTask}
         >
           <span className="sub-header__icon">
-            <AddIcon width="22" />
+            <AddIcon width="18" />
           </span>
           task
         </button>

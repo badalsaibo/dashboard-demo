@@ -14,7 +14,7 @@ const Task = (props) => {
   const { toggleCompleted } = props;
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const handleViewMore = () => {
+  const toggleViewMore = () => {
     setIsExpanded(!isExpanded);
   };
 
@@ -35,7 +35,7 @@ const Task = (props) => {
           <UserIcon width="36" />
         </div>
         <div className="task__due-date">{dueDate}</div>
-        <div className="task__view-more" onClick={handleViewMore}>
+        <div className="task__view-more" onClick={toggleViewMore}>
           <ViewMoreIcon width="32" />
         </div>
       </div>
@@ -43,7 +43,7 @@ const Task = (props) => {
         <ExpandedTask
           data={props.data}
           toggleCompleted={toggleCompleted}
-          handleViewMore={handleViewMore}
+          toggleViewMore={toggleViewMore}
         />
       ) : null}
     </>
