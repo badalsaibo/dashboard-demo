@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 
 import Task from './components/Task/Task';
 // import ExpandedTask from './components/ExpandedTask/ExpandedTask';
@@ -41,11 +41,26 @@ const data = [
 ];
 
 function App() {
+  const [tasks, setTasks] = useState(data);
+
+  const toggleCompleted = (id) => {
+    console.log(id);
+    const updatedTasks = tasks.map((prevTask) => {
+      return prevTask.id !== id
+        ? prevTask
+        : {
+            ...prevTask,
+            completed: !prevTask.completed,
+          };
+    });
+    setTasks(updatedTasks);
+  };
+
   return (
     <div className="container">
       <TaskContainer>
-        {data.map((e) => (
-          <Task data={e} key={e.id} />
+        {tasks.map((e) => (
+          <Task data={e} key={e.id} toggleCompleted={toggleCompleted} />
         ))}
       </TaskContainer>
     </div>

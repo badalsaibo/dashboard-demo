@@ -10,12 +10,9 @@ import { ReactComponent as UserIcon } from '../../icons/user.svg';
 import './Task.css';
 
 const Task = (props) => {
-  const { completed, title, dueDate } = props.data;
-  const [isChecked, setIsChecked] = useState(completed);
+  const { completed, id, title, dueDate } = props.data;
+  const { toggleCompleted } = props;
   const [isExpanded, setIsExpanded] = useState(false);
-  const handleCheckbox = (e) => {
-    setIsChecked(!isChecked);
-  };
 
   const handleViewMore = () => {
     setIsExpanded(!isExpanded);
@@ -23,9 +20,9 @@ const Task = (props) => {
 
   return (
     <>
-      <div className={isChecked ? 'task completed' : 'task'}>
-        <div className="task__checkbox" onClick={handleCheckbox}>
-          {isChecked ? (
+      <div className={completed ? 'task completed' : 'task'}>
+        <div className="task__checkbox" onClick={() => toggleCompleted(id)}>
+          {completed ? (
             <div className="task__checkbox-ticked">
               <CheckboxIcon width="30" />
             </div>
