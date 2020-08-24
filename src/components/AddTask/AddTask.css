@@ -1,0 +1,95 @@
+.add-task {
+  background-color: #fff;
+  border-radius: 48px;
+  padding: 0 54px 54px 54px;
+  max-width: 580px;
+  overflow: hidden;
+}
+
+.menu-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #69cbaa;
+  margin: 0 -54px;
+  padding: 24px 54px;
+  margin-bottom: 40px;
+}
+
+.menu-bar__heading {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.menu-bar__icon {
+  cursor: pointer;
+  fill: #fff;
+}
+
+.delimeter {
+  width: 72px;
+  height: 2px;
+  background-color: #39a682;
+  text-align: center;
+  margin: 32px auto;
+}
+
+.input__form {
+}
+
+.input-form__task-name,
+.input-form__task-description {
+  background-color: #f0fffd;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  padding: 32px 48px;
+  outline: none;
+  width: 100%;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  resize: none;
+  margin-bottom: 16px;
+  line-height: 120%;
+}
+
+.input-form__task-name:focus,
+.input-form__task-description:focus {
+  border: 2px solid #67c2a4;
+}
+
+.input-form__task-name::placeholder,
+.input-form__task-description::placeholder {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.055em;
+  text-transform: capitalize;
+  color: #67c2a4;
+}
+
+.input-form__task-upload {
+  display: none;
+}
+
+.input-form__task-upload-label {
+  text-transform: capitalize;
+  color: #39a682;
+  display: block;
+  width: 100%;
+  padding: 32px 48px;
+  border: 3px dashed #30a381;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.input-form__task-upload-icon {
+  stroke: #30a381;
+}

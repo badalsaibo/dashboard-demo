@@ -2,6 +2,7 @@ import React from 'react';
 
 import Task from './components/Task/Task';
 import ExpandedTask from './components/ExpandedTask/ExpandedTask';
+import AddTask from './components/AddTask/AddTask';
 
 import './App.css';
 
@@ -40,6 +41,7 @@ function App() {
     <div className="container">
       <Task data={data[0]} />
       <ExpandedTask data={data[1]} />
+      <AddTask />
     </div>
   );
 }
