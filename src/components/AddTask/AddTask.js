@@ -70,7 +70,7 @@ const AddTask = ({ handleToggleAddTask, addTask }) => {
         <div className="delimeter"></div>
 
         <button type="submit" className="primary-button" disabled={isAdding}>
-          add task
+          {isAdding ? <span className="spinner"></span> : 'add task'}
         </button>
       </form>
     </div>
