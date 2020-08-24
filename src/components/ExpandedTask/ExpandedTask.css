@@ -50,7 +50,7 @@
 
 .primary-button {
   border: none;
-  background: #39a682;
+  background-color: #39a682;
   border-radius: 0px 0px 48px 48px;
   font-weight: 600;
   font-size: 20px;
@@ -66,6 +66,11 @@
 
 .primary-button:hover {
   background: #51af90;
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  background-color: hsl(160, 4%, 44%);
 }
 
 .secondary-button {

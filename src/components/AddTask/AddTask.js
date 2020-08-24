@@ -8,6 +8,7 @@ import './AddTask.css';
 const AddTask = ({ handleToggleAddTask, addTask }) => {
   const [taskName, setTaskName] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
+  const [isAdding, setIsAdding] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,10 +16,14 @@ const AddTask = ({ handleToggleAddTask, addTask }) => {
       alert('Fields cannot be empty!');
       return;
     }
-    addTask(taskName, taskDescription);
-    setTaskName('');
-    setTaskDescription('');
-    handleToggleAddTask();
+    setTimeout(() => {
+      addTask(taskName, taskDescription);
+      setTaskName('');
+      setTaskDescription('');
+      setIsAdding(false);
+      handleToggleAddTask();
+    }, 2000);
+    setIsAdding(true);
   };
 
   return (
@@ -64,7 +69,7 @@ const AddTask = ({ handleToggleAddTask, addTask }) => {
 
         <div className="delimeter"></div>
 
-        <button type="submit" className="primary-button">
+        <button type="submit" className="primary-button" disabled={isAdding}>
           add task
         </button>
       </form>
