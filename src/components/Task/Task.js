@@ -24,7 +24,7 @@ const Task = (props) => {
         <div className="task__checkbox" onClick={() => toggleCompleted(id)}>
           {completed ? (
             <div className="task__checkbox-ticked">
-              <CheckboxIcon width="30" />
+              <CheckboxIcon width="32" />
             </div>
           ) : (
             <div className="task__checkbox-empty"></div>
@@ -39,7 +39,13 @@ const Task = (props) => {
           <ViewMoreIcon width="32" />
         </div>
       </div>
-      {isExpanded ? <ExpandedTask data={props.data} /> : null}
+      {isExpanded ? (
+        <ExpandedTask
+          data={props.data}
+          toggleCompleted={toggleCompleted}
+          handleViewMore={handleViewMore}
+        />
+      ) : null}
     </>
   );
 };

@@ -19,11 +19,13 @@
   font-weight: 600;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .sub-header__icon {
   fill: #fff;
   margin-right: 12px;
+  display: flex;
 }
 
 /* placeholders */

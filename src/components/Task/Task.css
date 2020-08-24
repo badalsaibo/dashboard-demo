@@ -12,6 +12,7 @@
 }
 
 .task__checkbox-ticked {
+  display: flex;
 }
 
 .task__checkbox-empty {

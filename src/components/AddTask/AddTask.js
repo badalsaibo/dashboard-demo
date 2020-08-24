@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { ReactComponent as CloseIcon } from '../../icons/times.svg';
 import { ReactComponent as UploadIcon } from '../../icons/upload.svg';
 
 import './AddTask.css';
 
-const AddTask = ({ handleToggleAddTask }) => {
+const AddTask = ({ handleToggleAddTask, addTask }) => {
+  const [taskName, setTaskName] = useState('');
+  const [taskDescription, setTaskDescription] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (taskName === '' || taskDescription === '') {
+      alert('Fields cannot be empty!');
+      return;
+    }
+    addTask(taskName, taskDescription);
+    setTaskName('');
+    setTaskDescription('');
+    handleToggleAddTask();
+  };
+
   return (
     <div className="add-task">
       <div className="menu-bar">
@@ -14,12 +29,14 @@ const AddTask = ({ handleToggleAddTask }) => {
           <CloseIcon width="20" />
         </div>
       </div>
-      <form className="input-form">
+      <form className="input-form" onSubmit={handleSubmit}>
         <input
           type="text"
           id="task-name"
           className="input-form__task-name"
           placeholder="task name"
+          value={taskName}
+          onChange={(e) => setTaskName(e.target.value)}
         />
         <textarea
           rows="5"
@@ -27,6 +44,8 @@ const AddTask = ({ handleToggleAddTask }) => {
           id="task-description"
           className="input-form__task-description"
           placeholder="task description"
+          value={taskDescription}
+          onChange={(e) => setTaskDescription(e.target.value)}
         />
 
         <div className="delimeter"></div>

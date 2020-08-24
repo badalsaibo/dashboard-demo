@@ -47,6 +47,18 @@ function App() {
 
   const handleToggleAddTask = () => setToggleAddTask(!toggleAddTask);
 
+  const addTask = (name, description) => {
+    const newTask = {
+      id: new Date().getTime(),
+      completed: false,
+      title: name,
+      dueDate: new Date().toLocaleDateString(),
+      description: description,
+      asanaUrl: 'https://asana.com',
+    };
+    setTasks([...tasks, newTask]);
+  };
+
   const toggleCompleted = (id) => {
     console.log(id);
     const updatedTasks = tasks.map((prevTask) => {
@@ -69,7 +81,7 @@ function App() {
         ))}
       </TaskContainer>
       {toggleAddTask ? (
-        <AddTask handleToggleAddTask={handleToggleAddTask} />
+        <AddTask handleToggleAddTask={handleToggleAddTask} addTask={addTask} />
       ) : null}
     </div>
   );
