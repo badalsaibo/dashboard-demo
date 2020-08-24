@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { ReactComponent as CheckboxIcon } from '../../icons/check-circle.svg';
 import { ReactComponent as ViewMoreIcon } from '../../icons/ellipsis-h.svg';
@@ -7,11 +7,15 @@ import { ReactComponent as UserIcon } from '../../icons/user.svg';
 
 import './Task.css';
 
-const Task = ({ data: { completed, title, assignee, dueDate } }) => {
+const Task = ({ data: { completed, title, id, dueDate } }) => {
+  const [isChecked, setIsChecked] = useState(false);
+  const handleCheckbox = (e) => {
+    setIsChecked(!isChecked);
+  };
   return (
-    <div className={completed ? 'task completed' : 'task'}>
-      <div className="task__checkbox">
-        {completed ? (
+    <div className={isChecked ? 'task completed' : 'task'}>
+      <div className="task__checkbox" onClick={handleCheckbox}>
+        {isChecked ? (
           <div className="task__checkbox-ticked">
             <CheckboxIcon width="30" />
           </div>

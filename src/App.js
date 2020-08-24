@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Task from './components/Task/Task';
 // import ExpandedTask from './components/ExpandedTask/ExpandedTask';
@@ -9,6 +9,7 @@ import './App.css';
 
 const data = [
   {
+    id: '5ffjs',
     completed: true,
     title: 'Training schedule for new hires',
     assignee: 'Mark Jonas',
@@ -18,6 +19,7 @@ const data = [
     asanaUrl: 'https://asana.com',
   },
   {
+    id: '345jj',
     completed: false,
     title: 'Discuss canditates for sales manager',
     assignee: 'Rishabh Parth',
@@ -27,6 +29,7 @@ const data = [
     asanaUrl: 'https://asana.com',
   },
   {
+    id: '53h5h',
     completed: false,
     assignee: 'Meghna',
     title: 'Workload check-in',
@@ -42,7 +45,7 @@ function App() {
     <div className="container">
       <TaskContainer>
         {data.map((e) => (
-          <Task data={e} key={e.assignee} />
+          <Task data={e} key={e.id} />
         ))}
       </TaskContainer>
     </div>
