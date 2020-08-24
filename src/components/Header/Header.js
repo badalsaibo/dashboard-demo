@@ -4,7 +4,7 @@ import { ReactComponent as AddIcon } from '../../icons/plus.svg';
 
 import './Header.css';
 
-const Header = (props) => {
+const Header = ({ handleToggleAddTask }) => {
   return (
     <>
       <header className="header">
@@ -16,7 +16,10 @@ const Header = (props) => {
       </header>
       <div className="sub-header">
         <h2 className="sub-header__title">Dashboard</h2>
-        <button className="primary-button sub-header__button">
+        <button
+          className="primary-button sub-header__button"
+          onClick={handleToggleAddTask}
+        >
           <span className="sub-header__icon">
             <AddIcon width="22" />
           </span>

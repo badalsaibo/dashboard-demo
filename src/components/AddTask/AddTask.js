@@ -5,12 +5,12 @@ import { ReactComponent as UploadIcon } from '../../icons/upload.svg';
 
 import './AddTask.css';
 
-const AddTask = () => {
+const AddTask = ({ handleToggleAddTask }) => {
   return (
     <div className="add-task">
       <div className="menu-bar">
         <h3 className="menu-bar__heading">new task</h3>
-        <div className="menu-bar__icon">
+        <div className="menu-bar__icon" onClick={handleToggleAddTask}>
           <CloseIcon width="20" />
         </div>
       </div>

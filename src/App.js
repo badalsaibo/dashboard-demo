@@ -4,6 +4,7 @@ import Task from './components/Task/Task';
 // import ExpandedTask from './components/ExpandedTask/ExpandedTask';
 import Header from './components/Header/Header';
 import TaskContainer from './components/TaskContainer/TaskContainer';
+import AddTask from './components/AddTask/AddTask';
 
 import './App.css';
 
@@ -42,6 +43,9 @@ const data = [
 
 function App() {
   const [tasks, setTasks] = useState(data);
+  const [toggleAddTask, setToggleAddTask] = useState(false);
+
+  const handleToggleAddTask = () => setToggleAddTask(!toggleAddTask);
 
   const toggleCompleted = (id) => {
     console.log(id);
@@ -58,12 +62,15 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
+      <Header handleToggleAddTask={handleToggleAddTask} />
       <TaskContainer>
         {tasks.map((e) => (
           <Task data={e} key={e.id} toggleCompleted={toggleCompleted} />
         ))}
       </TaskContainer>
+      {toggleAddTask ? (
+        <AddTask handleToggleAddTask={handleToggleAddTask} />
+      ) : null}
     </div>
   );
 }
